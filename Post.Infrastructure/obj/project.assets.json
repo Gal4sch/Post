@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {}
+    "net5.0": {
+      "Post.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Post.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Post.Core.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Post.Core/1.0.0": {
+      "type": "project",
+      "path": "../Post.Core/Post.Core.csproj",
+      "msbuildProject": "../Post.Core/Post.Core.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net5.0": []
+    "net5.0": [
+      "Post.Core >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Mystery\\.nuget\\packages\\": {},
@@ -38,7 +57,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Pliki\\Projekty\\Programming\\Programs\\Post\\src\\Post.Core\\Post.Core.csproj": {
+              "projectPath": "D:\\Pliki\\Projekty\\Programming\\Programs\\Post\\src\\Post.Core\\Post.Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

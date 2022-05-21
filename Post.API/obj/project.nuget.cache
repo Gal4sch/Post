@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CVXiTRXi4kJmJi2KLsqbKZxrlCQJf4AO1OCo3Gl4pcqnRYmmlrjWPJl+gdi7zPYvPmfFEENkc9ozhVOr7fLvNA==",
+  "dgSpecHash": "NF8sILoZFnl8yimroMAc/Ca/2OMHisx4i4FmQY/SRvU1BxOeJaIs422n7h7uCTqduSb6WGe6Ko+BB+GuweBiJg==",
   "success": true,
-  "projectFilePath": "d:\\Pliki\\Projekty\\Programming\\Programs\\Post\\src\\Post.Api\\Post.Api.csproj",
+  "projectFilePath": "D:\\Pliki\\Projekty\\Programming\\Programs\\Post\\src\\Post.API\\Post.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mystery\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\Mystery\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

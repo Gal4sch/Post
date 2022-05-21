@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\Pliki\\Projekty\\Programming\\Programs\\Post\\src\\Post.Core\\Post.Core.csproj": {}
+    "D:\\Pliki\\Projekty\\Programming\\Programs\\Post\\src\\Post.Core\\Post.Core.csproj": {}
   },
   "projects": {
-    "d:\\Pliki\\Projekty\\Programming\\Programs\\Post\\src\\Post.Core\\Post.Core.csproj": {
+    "D:\\Pliki\\Projekty\\Programming\\Programs\\Post\\src\\Post.Core\\Post.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\Pliki\\Projekty\\Programming\\Programs\\Post\\src\\Post.Core\\Post.Core.csproj",
+        "projectUniqueName": "D:\\Pliki\\Projekty\\Programming\\Programs\\Post\\src\\Post.Core\\Post.Core.csproj",
         "projectName": "Post.Core",
-        "projectPath": "d:\\Pliki\\Projekty\\Programming\\Programs\\Post\\src\\Post.Core\\Post.Core.csproj",
+        "projectPath": "D:\\Pliki\\Projekty\\Programming\\Programs\\Post\\src\\Post.Core\\Post.Core.csproj",
         "packagesPath": "C:\\Users\\Mystery\\.nuget\\packages\\",
-        "outputPath": "d:\\Pliki\\Projekty\\Programming\\Programs\\Post\\src\\Post.Core\\obj\\",
+        "outputPath": "D:\\Pliki\\Projekty\\Programming\\Programs\\Post\\src\\Post.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"

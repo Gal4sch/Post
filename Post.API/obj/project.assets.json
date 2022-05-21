@@ -75,6 +75,29 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "Post.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Post.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Post.Core.dll": {}
+        }
+      },
+      "Post.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Post.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Post.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Post.Infrastructure.dll": {}
+        }
       }
     }
   },
@@ -185,10 +208,21 @@
         "swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
+    },
+    "Post.Core/1.0.0": {
+      "type": "project",
+      "path": "../Post.Core/Post.Core.csproj",
+      "msbuildProject": "../Post.Core/Post.Core.csproj"
+    },
+    "Post.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../Post.Infrastructure/Post.Infrastructure.csproj",
+      "msbuildProject": "../Post.Infrastructure/Post.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "Post.Infrastructure >= 1.0.0",
       "Swashbuckle.AspNetCore >= 5.6.3"
     ]
   },
@@ -223,7 +257,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Pliki\\Projekty\\Programming\\Programs\\Post\\src\\Post.Infrastructure\\Post.Infrastructure.csproj": {
+              "projectPath": "D:\\Pliki\\Projekty\\Programming\\Programs\\Post\\src\\Post.Infrastructure\\Post.Infrastructure.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
