@@ -8,6 +8,10 @@ namespace Post.Core.Domain
         public int NumberOfPackages { get; protected set; }
         public Guid? UserId { get; protected set; }
         public string Username { get; protected set; }
+        public int Weight { get; protected set; }
+        public int Height { get; protected set; }
+        public int Width { get; protected set; }
+        public int Length { get; protected set; }
         public bool Created => UserId.HasValue;
 
         protected Parcel()

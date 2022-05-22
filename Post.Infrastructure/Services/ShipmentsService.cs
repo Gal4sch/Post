@@ -48,17 +48,24 @@ namespace Post.Infrastructure.Services
             return _mapper.Map<IEnumerable<ShipmentsDto>>(shipments);
         }
 
-        public async Task CreateAsync(Guid id, string shipmentsNumber, string senderCompanyName, string senderName, string senderStreet, string senderZipCode, string senderCity, string senderPhoneNumber, string senderEmail, string recipientCompanyName, string recipientName, string recipientStreet, string recipientZipCode, string recipientCity, string recipientPhoneNumber, string recipientEmail, string description, int weight, int height, int width, int length)
+        public async Task CreateAsync(Guid id, string shipmentsNumber, string senderCompanyName, string senderName, string senderStreet,
+            string senderZipCode, string senderCity, string senderPhoneNumber, string senderEmail, string recipientCompanyName, 
+            string recipientName, string recipientStreet, string recipientZipCode, string recipientCity, string recipientPhoneNumber, 
+            string recipientEmail, string description, int weight, int height, int width, int length)
         {
             throw new NotImplementedException();
         }
 
-        public async Task AddParcelsAsync(Guid id, int shipmentsNumber, int numberOfPackages, int weight, int height, int width, int length)
+        public async Task AddParcelsAsync(Guid id, int shipmentsNumber, int numberOfPackages, 
+            int weight, int height, int width, int length)
         {
             throw new NotImplementedException();
         }
 
-        public async Task UpdateAsync(Guid id, string shipmentsNumber, string senderCompanyName, string senderName, string senderStreet, string senderZipCode, string senderCity, string senderPhoneNumber, string senderEmail, string recipientCompanyName, string recipientName, string recipientStreet, string recipientZipCode, string recipientCity, string recipientPhoneNumber, string recipientEmail, string description, int weight, int height, int width, int length)
+        public async Task UpdateAsync(Guid id, string shipmentsNumber, string senderCompanyName, string senderName, string senderStreet,
+            string senderZipCode, string senderCity, string senderPhoneNumber, string senderEmail, string recipientCompanyName, 
+            string recipientName, string recipientStreet, string recipientZipCode, string recipientCity, string recipientPhoneNumber, 
+            string recipientEmail, string description, int weight, int height, int width, int length)
         {
             throw new NotImplementedException();
         }
