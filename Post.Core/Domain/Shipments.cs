@@ -12,19 +12,22 @@ namespace Post.Core.Domain
         {
         }
 
-        public Shipments(Guid shipmentId, string senderCompanyName, string senderName, int senderZipCode, string senderCity,
-            string senderPhoneNumber, string senderEmail, string recipientCompanyName, string recipientName, int recipientZipCode,
-            string recipientCity, string recipientPhoneNumber, string recipientEmail, string description)
+        public Shipments(Guid shipmentId, int shipmentsNumber, string senderCompanyName, string senderName, string senderStreet, int senderZipCode, 
+            string senderCity, string senderPhoneNumber, string senderEmail, string recipientCompanyName, string recipientName, string recipientStreet,
+            int recipientZipCode, string recipientCity, string recipientPhoneNumber, string recipientEmail, string description)
         {
             Id = shipmentId;
+            ShipmentsNumber = shipmentsNumber;
             CompanyName = senderCompanyName;
             Name = senderName;
+            Street = senderStreet;
             ZipCode = senderZipCode;
             City = senderCity;
             PhoneNumber = senderPhoneNumber;
             Email = senderEmail;
             CompanyName = recipientCompanyName;
             Name = recipientName;
+            Street = recipientStreet;
             ZipCode = recipientZipCode;
             City = recipientCity;
             PhoneNumber = recipientPhoneNumber;
@@ -33,12 +36,12 @@ namespace Post.Core.Domain
             CreatedAt = DateTime.Now;
             UpdatedAt = DateTime.Now;
         }
-        public void AddParcels(int amount, int weigh, int height, int width, int length)
+        public void AddParcels(int amount, int weight, int height, int width, int length)
         {
             var numberOfPackages = _parcel.Count + 1;
             for (var i = 0; i < amount; i++)
             {
-                _parcel.Add(new Parcel(this, numberOfPackages, weigh, height, width, length));
+                _parcel.Add(new Parcel(this, numberOfPackages, weight, height, width, length));
                 numberOfPackages++;
             }
         }

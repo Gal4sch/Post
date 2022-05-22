@@ -13,11 +13,11 @@ namespace Post.Core.Domain
         protected Parcel()
         {
         }
-        public Parcel(Shipments shipments, int numberOfPackages, int weigh, int height, int width, int length)
+        public Parcel(Shipments shipments, int numberOfPackages, int weight, int height, int width, int length)
         {
             ShipmentsId = shipments.Id;
             NumberOfPackages = numberOfPackages;
-            Weigh = weigh;
+            Weight = weight;
             Height = height;
             Width = width;
             Length = length;

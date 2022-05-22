@@ -9,7 +9,6 @@ D:\Pliki\Projekty\Programming\Programs\Post\src\Post.Infrastructure\obj\Debug\ne
 D:\Pliki\Projekty\Programming\Programs\Post\src\Post.Infrastructure\obj\Debug\net5.0\Post.Infrastructure.AssemblyInfoInputs.cache
 D:\Pliki\Projekty\Programming\Programs\Post\src\Post.Infrastructure\obj\Debug\net5.0\Post.Infrastructure.AssemblyInfo.cs
 D:\Pliki\Projekty\Programming\Programs\Post\src\Post.Infrastructure\obj\Debug\net5.0\Post.Infrastructure.csproj.CoreCompileInputs.cache
-D:\Pliki\Projekty\Programming\Programs\Post\src\Post.Infrastructure\obj\Debug\net5.0\Post.Infrastructure.csproj.CopyComplete
 D:\Pliki\Projekty\Programming\Programs\Post\src\Post.Infrastructure\obj\Debug\net5.0\Post.Infrastructure.dll
 D:\Pliki\Projekty\Programming\Programs\Post\src\Post.Infrastructure\obj\Debug\net5.0\ref\Post.Infrastructure.dll
 D:\Pliki\Projekty\Programming\Programs\Post\src\Post.Infrastructure\obj\Debug\net5.0\Post.Infrastructure.pdb

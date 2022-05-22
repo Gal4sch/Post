@@ -10,7 +10,7 @@ namespace Post.Core.Repositories
         Task<Shipments> GetAsync(Guid id);
         Task<Shipments> GetAsync(int shipmentsNumber);
         Task<Shipments> GetAsync(string companyName = "");
-        Task<IEnumerable<Shipments>> BrowseAsync(int shipmentsNumber);
+        Task<IEnumerable<Shipments>> BrowseAsync(string companyName);
         Task AddAsync(Shipments shipments);
         Task UpdateAsync(Shipments shipments);
         Task DeleteAsync(Shipments shipments);

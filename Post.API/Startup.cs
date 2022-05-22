@@ -11,6 +11,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Post.Core.Repositories;
+using Post.Infrastructure.Mappers;
+using Post.Infrastructure.Repositories;
+using Post.Infrastructure.Services;
 
 namespace Post.API
 {
@@ -32,6 +36,10 @@ namespace Post.API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Post.API", Version = "v1" });
             });
+            services.AddScoped<IShipmentsRepository,ShipmentsRepository>();
+            services.AddScoped<IUserRepository,UserRepository>();
+            services.AddScoped<IShipmentsService,ShipmentsService>();
+            services.AddSingleton(AutoMapperConfig.Initialize());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

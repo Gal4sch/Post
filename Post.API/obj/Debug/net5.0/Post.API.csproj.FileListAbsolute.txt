@@ -26,8 +26,8 @@ D:\Pliki\Projekty\Programming\Programs\Post\src\Post.API\obj\Debug\net5.0\static
 D:\Pliki\Projekty\Programming\Programs\Post\src\Post.API\obj\Debug\net5.0\staticwebassets\Post.API.StaticWebAssets.xml
 D:\Pliki\Projekty\Programming\Programs\Post\src\Post.API\obj\Debug\net5.0\scopedcss\bundle\Post.API.styles.css
 D:\Pliki\Projekty\Programming\Programs\Post\src\Post.API\obj\Debug\net5.0\Post.API.RazorTargetAssemblyInfo.cache
-D:\Pliki\Projekty\Programming\Programs\Post\src\Post.API\obj\Debug\net5.0\Post.API.csproj.CopyComplete
 D:\Pliki\Projekty\Programming\Programs\Post\src\Post.API\obj\Debug\net5.0\Post.API.dll
 D:\Pliki\Projekty\Programming\Programs\Post\src\Post.API\obj\Debug\net5.0\ref\Post.API.dll
 D:\Pliki\Projekty\Programming\Programs\Post\src\Post.API\obj\Debug\net5.0\Post.API.pdb
 D:\Pliki\Projekty\Programming\Programs\Post\src\Post.API\obj\Debug\net5.0\Post.API.genruntimeconfig.cache
+D:\Pliki\Projekty\Programming\Programs\Post\src\Post.API\bin\Debug\net5.0\AutoMapper.dll

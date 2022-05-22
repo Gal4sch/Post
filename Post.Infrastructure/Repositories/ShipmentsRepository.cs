@@ -9,7 +9,11 @@ namespace Post.Infrastructure.Repositories
 {
     public class ShipmentsRepository : IShipmentsRepository
     {
-        private static readonly ISet<Shipments> _shipments = new HashSet<Shipments>();
+        private static readonly ISet<Shipments> _shipments = new HashSet<Shipments>
+        {
+            new Shipments(Guid.NewGuid(), 1024, "company 1", "name", "street", 11111, "city 1", "777", "test1@test.com", "company 2", 
+                "name 2", "street 2", 11-111, "City 2", "777",  "test1@test.com", "description"),
+        };
 
         public async Task<Shipments> GetAsync(Guid id)
             => await Task.FromResult(_shipments.SingleOrDefault(x => x.Id == id));
@@ -20,14 +24,14 @@ namespace Post.Infrastructure.Repositories
         public async Task<Shipments> GetAsync(string companyName = "")
             => await Task.FromResult(_shipments.SingleOrDefault(x => x.CompanyName.ToLowerInvariant() == companyName.ToLowerInvariant()));
 
-        public async Task<IEnumerable<Shipments>> BrowseAsync(int shipmentsNumber)
+        public async Task<IEnumerable<Shipments>> BrowseAsync(string companyName)
             => await Task.FromResult(_shipments);
+            
         public async Task AddAsync(Shipments shipments)
         {
             _shipments.Add(shipments);
             await Task.CompletedTask;
         }
-
 
         public async Task UpdateAsync(Shipments shipments)
         {

@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "NF8sILoZFnl8yimroMAc/Ca/2OMHisx4i4FmQY/SRvU1BxOeJaIs422n7h7uCTqduSb6WGe6Ko+BB+GuweBiJg==",
+  "dgSpecHash": "VXFmmq8W2kq2jRVx2NvaocITuhWSZ9dyP7y89dkZta1x/a70lkleypoGL4Vn+LvnQOXivshjKSSl/uShgO83iA==",
   "success": true,
   "projectFilePath": "D:\\Pliki\\Projekty\\Programming\\Programs\\Post\\src\\Post.API\\Post.API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Mystery\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\Mystery\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Mystery\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\Mystery\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\Mystery\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",

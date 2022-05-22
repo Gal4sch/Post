@@ -10,7 +10,7 @@ namespace Post.Core.Domain
         public int ZipCode { get; protected set; }
         public string City { get; protected set; }
         public string Description { get; protected set; }
-        public int Weigh { get; protected set; }
+        public int Weight { get; protected set; }
         public int Height { get; protected set; }
         public int Width { get; protected set; }
         public int Length { get; protected set; }

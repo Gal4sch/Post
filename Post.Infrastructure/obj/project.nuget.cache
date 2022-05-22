@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "+WydRE1e5wQhPcKaFdOGC/AF8c53okx+kTT49LXaq4Lu1ALOKnHnXzSXYfNaY6h5VbW70k+KcXL5A2ec7Kqecw==",
+  "dgSpecHash": "RW2t2uS/1BrXGGWxW3e9MRyhQ6qZxRgt0opNVwMiCPZrul2Fnt/hnyyjqFrFXodo9cZBEvdOobDFhLCXm/l20w==",
   "success": true,
   "projectFilePath": "D:\\Pliki\\Projekty\\Programming\\Programs\\Post\\src\\Post.Infrastructure\\Post.Infrastructure.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Mystery\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\Mystery\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }
