@@ -12,6 +12,7 @@ namespace Post.Infrastructure.Mappers
             {
                 cfg.CreateMap<Shipments, ShipmentsDto>()
                     .ForMember(x => x.ParcelsCount, m => m.MapFrom(p => p.Parcel.Count()));
+                cfg.CreateMap<CourierOrder, CourierOrderDto>();
             })
             .CreateMapper();
     }
