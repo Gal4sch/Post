@@ -21,7 +21,7 @@ namespace Post.Infrastructure.Repositories
         public async Task<Shipments> GetAsync(int shipmentsNumber)
             => await Task.FromResult(_shipments.SingleOrDefault(x => x.ShipmentsNumber == shipmentsNumber));
 
-        public async Task<Shipments> GetAsync(string companyName = "")
+        public async Task<Shipments> GetAsync(string companyName)
             => await Task.FromResult(_shipments.SingleOrDefault(x => x.SenderCompanyName.ToLowerInvariant() == companyName.ToLowerInvariant()));
 
         public async Task<IEnumerable<Shipments>> BrowseAsync(string companyName)

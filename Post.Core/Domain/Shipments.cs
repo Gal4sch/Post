@@ -45,6 +45,5 @@ namespace Post.Core.Domain
                 numberOfPackages++;
             }
         }
-
     }
 }

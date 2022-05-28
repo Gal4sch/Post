@@ -11,8 +11,8 @@ namespace Post.Infrastructure.Repositories
     {
         private static readonly ISet<CourierOrder> _courierOrder = new HashSet<CourierOrder>
         {
-            new CourierOrder(Guid.NewGuid(), 20220528, 1, "company 1", "name 1", "street 1", 02274 , "city 1",
-                "777", "test@test.com", "description")
+            new CourierOrder(Guid.NewGuid(), 20220528, "company 1", "name 1", "street 1", 02274 , "city 1",
+                "777", "test@test.com", "description", 1)
         };
 
         public async Task<CourierOrder> GetAsync(Guid id)

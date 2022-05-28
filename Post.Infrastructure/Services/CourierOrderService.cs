@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using Post.Core.Domain;
+using Post.Core.Repositories;
 using Post.Infrastructure.DTO;
 
 namespace Post.Infrastructure.Services
 {
     public class CourierOrderService : ICourierOrderService
     {
-        private readonly ICourierOrderService _courierOrderRepository;
+        private readonly ICourierOrderRepository _courierOrderRepository;
         private readonly IMapper _mapper;
 
-        public CourierOrderService(ICourierOrderService courierOrderRepository, IMapper mapper)
+        public CourierOrderService(ICourierOrderRepository courierOrderRepository, IMapper mapper)
         {
             _courierOrderRepository = courierOrderRepository;
             _mapper = mapper;
@@ -20,42 +21,40 @@ namespace Post.Infrastructure.Services
 
         public async Task<CourierOrderDto> GetAsync(Guid id)
         {
-            var shipments = await _courierOrderRepository.GetAsync(id);
+            var courierOrder = await _courierOrderRepository.GetAsync(id);
 
-            return _mapper.Map<CourierOrderDto>(shipments);
+            return _mapper.Map<CourierOrderDto>(courierOrder);
         }
 
-        public async Task<CourierOrderDto> GetAsync(int shipmentsNumber)
+        public async Task<CourierOrderDto> GetAsync(int courierOrderNumber)
         {
-            var shipments = await _courierOrderRepository.GetAsync(shipmentsNumber);
+            var courierOrder = await _courierOrderRepository.GetAsync(courierOrderNumber);
 
-            return _mapper.Map<CourierOrderDto>(shipments);
+            return _mapper.Map<CourierOrderDto>(courierOrderNumber);
         }
 
         public async Task<CourierOrderDto> GetAsync(string companyName)
         {
-            var shipments = await _courierOrderRepository.GetAsync(companyName);
+            var courierOrder = await _courierOrderRepository.GetAsync(companyName);
 
-            return _mapper.Map<CourierOrderDto>(shipments);
+            return _mapper.Map<CourierOrderDto>(courierOrder);
         }
 
         public async Task<IEnumerable<CourierOrderDto>> BrowseAsync(string companyName = null)
         {
-            var shipments = await _courierOrderRepository.BrowseAsync(companyName);
+            var courierOrder = await _courierOrderRepository.BrowseAsync(companyName);
 
-            return _mapper.Map<IEnumerable<CourierOrderDto>>(shipments);
+            return _mapper.Map<IEnumerable<CourierOrderDto>>(courierOrder);
         }
 
-        public async Task CreateAsync(Guid id, int courierOrderNumber, int numberOfPackages, string senderCompanyName, string senderName, string senderStreet,
-            string senderZipCode, string senderCity, string senderPhoneNumber, string senderEmail, string description, 
-            int weight, int height, int width, int length)
+        public async Task CreateAsync(Guid id, int courierOrderNumber, string senderCompanyName, string senderName, string senderStreet,
+            string senderZipCode, string senderCity, string senderPhoneNumber, string senderEmail, string description, int numberOfPackages)
         {
             throw new NotImplementedException();
         }
 
-        public async Task UpdateAsync(Guid id, int courierOrderNumber, int numberOfPackages, string senderCompanyName, string senderName, string senderStreet,
-            string senderZipCode, string senderCity, string senderPhoneNumber, string senderEmail, string description, 
-            int weight, int height, int width, int length)
+        public async Task UpdateAsync(Guid id, int courierOrderNumber, string senderCompanyName, string senderName, string senderStreet,
+            string senderZipCode, string senderCity, string senderPhoneNumber, string senderEmail, string description, int numberOfPackages)
         {
             throw new NotImplementedException();
         }

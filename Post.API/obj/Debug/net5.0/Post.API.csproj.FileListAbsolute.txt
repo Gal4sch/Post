@@ -31,3 +31,4 @@ D:\Pliki\Projekty\Programming\Programs\Post\src\Post.API\obj\Debug\net5.0\ref\Po
 D:\Pliki\Projekty\Programming\Programs\Post\src\Post.API\obj\Debug\net5.0\Post.API.pdb
 D:\Pliki\Projekty\Programming\Programs\Post\src\Post.API\obj\Debug\net5.0\Post.API.genruntimeconfig.cache
 D:\Pliki\Projekty\Programming\Programs\Post\src\Post.API\bin\Debug\net5.0\AutoMapper.dll
+D:\Pliki\Projekty\Programming\Programs\Post\src\Post.API\obj\Debug\net5.0\Post.API.csproj.CopyComplete

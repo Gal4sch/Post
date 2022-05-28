@@ -6,7 +6,6 @@ namespace Post.Infrastructure.DTO
     {
         public Guid Id { get; set; }
         public int CourierOrderNumber { get; set; }
-        public int NumberOfPackages { get; set; }
         public string SenderCompanyName { get; set; }
         public string SenderName { get; set; }
         public string SenderStreet { get; set; }
@@ -15,5 +14,6 @@ namespace Post.Infrastructure.DTO
         public string SenderPhoneNumber { get; set; }
         public string SenderEmail { get; set; }
         public string Description { get; set; }
+        public int NumberOfPackages { get; set; }
     }
 }
