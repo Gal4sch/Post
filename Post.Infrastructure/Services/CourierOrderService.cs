@@ -48,13 +48,20 @@ namespace Post.Infrastructure.Services
         }
 
         public async Task CreateAsync(Guid id, int courierOrderNumber, string senderCompanyName, string senderName, string senderStreet,
-            string senderZipCode, string senderCity, string senderPhoneNumber, string senderEmail, string description, int numberOfPackages)
+            int senderZipCode, string senderCity, string senderPhoneNumber, string senderEmail, string description, int numberOfPackages)
         {
-            throw new NotImplementedException();
+            var courierOrder = await _courierOrderRepository.GetAsync(courierOrderNumber);
+            if(courierOrder !=null)
+            {
+                throw new Exception($"Courier order with number: '{courierOrder}' already exists.");
+            }
+            courierOrder = new CourierOrder(id, courierOrderNumber, senderCompanyName, senderName, senderStreet, senderZipCode,
+                senderCity, senderPhoneNumber, senderEmail, description, numberOfPackages);
+            await _courierOrderRepository.AddAsync(courierOrder);
         }
 
         public async Task UpdateAsync(Guid id, int courierOrderNumber, string senderCompanyName, string senderName, string senderStreet,
-            string senderZipCode, string senderCity, string senderPhoneNumber, string senderEmail, string description, int numberOfPackages)
+            int senderZipCode, string senderCity, string senderPhoneNumber, string senderEmail, string description, int numberOfPackages)
         {
             throw new NotImplementedException();
         }
