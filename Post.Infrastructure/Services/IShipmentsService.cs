@@ -8,9 +8,9 @@ namespace Post.Infrastructure.Services
 {
     public interface IShipmentsService
     {
-        Task<ShipmentsDto> GetAsync(Guid id);
-        Task<ShipmentsDto> GetAsync(int shipmentsNumber);
-        Task<ShipmentsDto> GetAsync(string companyName);
+        Task<ShipmentsDetailsDto> GetAsync(Guid id);
+        Task<ShipmentsDetailsDto> GetAsync(int shipmentsNumber);
+        Task<ShipmentsDetailsDto> GetAsync(string companyName);
         Task<IEnumerable<ShipmentsDto>> BrowseAsync(string companyName = null);
         Task CreateAsync(Guid id, int shipmentsNumber, string senderCompanyName, string senderName, string senderStreet,
             int senderZipCode, string senderCity, string senderPhoneNumber, string senderEmail, string recipientCompanyName,

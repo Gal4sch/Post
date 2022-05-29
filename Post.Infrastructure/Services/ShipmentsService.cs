@@ -21,25 +21,25 @@ namespace Post.Infrastructure.Services
             _mapper = mapper;
         }
 
-        public async Task<ShipmentsDto> GetAsync(Guid id)
+        public async Task<ShipmentsDetailsDto> GetAsync(Guid id)
         {
             var shipments = await _shipmentsRepository.GetAsync(id);
 
-            return _mapper.Map<ShipmentsDto>(shipments);
+            return _mapper.Map<ShipmentsDetailsDto>(shipments);
         }
 
-        public async Task<ShipmentsDto> GetAsync(int shipmentsNumber)
+        public async Task<ShipmentsDetailsDto> GetAsync(int shipmentsNumber)
         {
             var shipments = await _shipmentsRepository.GetAsync(shipmentsNumber);
 
-            return _mapper.Map<ShipmentsDto>(shipments);
+            return _mapper.Map<ShipmentsDetailsDto>(shipments);
         }
 
-        public async Task<ShipmentsDto> GetAsync(string companyName)
+        public async Task<ShipmentsDetailsDto> GetAsync(string companyName)
         {
             var shipments = await _shipmentsRepository.GetAsync(companyName);
 
-            return _mapper.Map<ShipmentsDto>(shipments);
+            return _mapper.Map<ShipmentsDetailsDto>(shipments);
         }
 
         public async Task<IEnumerable<ShipmentsDto>> BrowseAsync(string companyName = null)

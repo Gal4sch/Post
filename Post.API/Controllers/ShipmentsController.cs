@@ -25,6 +25,19 @@ namespace Post.API.Controllers
             return Json(shipments);
         }
 
+        [HttpGet("shipmentId")]
+        public async Task<IActionResult> Get(Guid shipmentsId)
+        {
+            var shipment = await _shipmentsService.GetAsync(shipmentsId);
+            if(shipment == null)
+            {
+                return NotFound();
+            }
+
+            return Json(shipment);
+        }
+
+
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] CreateShipments command)
         {
