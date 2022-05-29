@@ -1,11 +1,10 @@
 using System;
 
-namespace Post.Infrastructure.Commands
+namespace Post.Infrastructure.Commands.Shipments
 {
-    public class CreateShipments
+    public class UpdateShipments
     {
         public Guid ShipmentsId { get; set; }
-        public int ShipmentsNumber { get; set; }
         public string SenderCompanyName { get; set; }
         public string SenderName { get; set; }
         public string SenderStreet { get; set; }
@@ -21,6 +20,10 @@ namespace Post.Infrastructure.Commands
         public string RecipientPhoneNumber { get; set; }
         public string RecipientEmail { get; set; }
         public string Description { get; set; }
-        public int ParcelsCount { get; set; }
+        public int NumberOfPackages { get; set; }
+        public int Weight { get; set; }
+        public int Height { get; set; }
+        public int Width { get; set; }
+        public int Length { get; set; }
     }
 }

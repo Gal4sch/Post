@@ -16,8 +16,8 @@ namespace Post.Infrastructure.Services
             int senderZipCode, string senderCity, string senderPhoneNumber, string senderEmail, string recipientCompanyName,
             string recipientName, string recipientStreet, int recipientZipCode, string recipientCity, string recipientPhoneNumber,
             string recipientEmail, string description);
-        Task AddParcelsAsync(Guid id, int shipmentsNumber, int numberOfPackages, int weight, int height, int width, int length);
-        Task UpdateAsync(Guid id, int shipmentsNumber, string senderCompanyName, string senderName, string senderStreet,
+        Task AddParcelsAsync(Guid id, int numberOfPackages, int weight, int height, int width, int length);
+        Task UpdateAsync(Guid id, string senderCompanyName, string senderName, string senderStreet,
             int senderZipCode, string senderCity, string senderPhoneNumber, string senderEmail, string recipientCompanyName,
             string recipientName, string recipientStreet, int recipientZipCode, string recipientCity, string recipientPhoneNumber,
             string recipientEmail, string description);

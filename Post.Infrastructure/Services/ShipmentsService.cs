@@ -6,6 +6,7 @@ using AutoMapper;
 using Post.Core.Domain;
 using Post.Core.Repositories;
 using Post.Infrastructure.DTO;
+using Post.Infrastructure.Extensions;
 
 namespace Post.Infrastructure.Services
 {
@@ -19,7 +20,7 @@ namespace Post.Infrastructure.Services
             _shipmentsRepository = shipmentsRepository;
             _mapper = mapper;
         }
-        
+
         public async Task<ShipmentsDto> GetAsync(Guid id)
         {
             var shipments = await _shipmentsRepository.GetAsync(id);
@@ -37,7 +38,7 @@ namespace Post.Infrastructure.Services
         public async Task<ShipmentsDto> GetAsync(string companyName)
         {
             var shipments = await _shipmentsRepository.GetAsync(companyName);
-            
+
             return _mapper.Map<ShipmentsDto>(shipments);
         }
 
@@ -49,12 +50,12 @@ namespace Post.Infrastructure.Services
         }
 
         public async Task CreateAsync(Guid id, int shipmentsNumber, string senderCompanyName, string senderName, string senderStreet,
-            int senderZipCode, string senderCity, string senderPhoneNumber, string senderEmail, string recipientCompanyName, 
-            string recipientName, string recipientStreet, int recipientZipCode, string recipientCity, string recipientPhoneNumber, 
+            int senderZipCode, string senderCity, string senderPhoneNumber, string senderEmail, string recipientCompanyName,
+            string recipientName, string recipientStreet, int recipientZipCode, string recipientCity, string recipientPhoneNumber,
             string recipientEmail, string description)
         {
             var shipments = await _shipmentsRepository.GetAsync(shipmentsNumber);
-            if(shipments !=null)
+            if (shipments != null)
             {
                 throw new Exception($"Shipments with number: '{shipmentsNumber}' already exists.");
             }
@@ -64,23 +65,27 @@ namespace Post.Infrastructure.Services
             await _shipmentsRepository.AddAsync(shipments);
         }
 
-        public async Task AddParcelsAsync(Guid id, int shipmentsNumber, int numberOfPackages, 
-            int weight, int height, int width, int length)
+        public async Task AddParcelsAsync(Guid shipmentsId, int amount, int weight, int height, int width, int length)
         {
-            throw new NotImplementedException();
+            var shipments = await _shipmentsRepository.GetOrFailShipmentsAsync(shipmentsId);
+            shipments.AddParcels(amount, weight, height, width, length);
+            await _shipmentsRepository.UpdateAsync(shipments);
         }
 
-        public async Task UpdateAsync(Guid id, int shipmentsNumber, string senderCompanyName, string senderName, string senderStreet,
-            int senderZipCode, string senderCity, string senderPhoneNumber, string senderEmail, string recipientCompanyName, 
-            string recipientName, string recipientStreet, int recipientZipCode, string recipientCity, string recipientPhoneNumber, 
+        public async Task UpdateAsync(Guid id, string senderCompanyName, string senderName, string senderStreet,
+            int senderZipCode, string senderCity, string senderPhoneNumber, string senderEmail, string recipientCompanyName,
+            string recipientName, string recipientStreet, int recipientZipCode, string recipientCity, string recipientPhoneNumber,
             string recipientEmail, string description)
         {
-            throw new NotImplementedException();
+            var shipments = await _shipmentsRepository.GetOrFailShipmentsAsync(id);      
+            shipments.SetCompanyName(senderCompanyName, recipientCompanyName);
+            await _shipmentsRepository.UpdateAsync(shipments);
         }
 
         public async Task DeleteAsync(Guid id)
         {
-            throw new NotImplementedException();
+            var shipments = await _shipmentsRepository.GetOrFailShipmentsAsync(id); 
+            await _shipmentsRepository.DeleteAsync(shipments);
         }
     }
 }

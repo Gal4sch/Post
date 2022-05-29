@@ -18,14 +18,13 @@ namespace Post.Core.Domain
         {
             Id = shipmentId;
             ShipmentsNumber = shipmentsNumber;
-            SenderCompanyName = senderCompanyName;
+            SetCompanyName(senderCompanyName, recipientCompanyName);
             SenderName = senderName;
             SenderStreet = senderStreet;
             SenderZipCode = senderZipCode;
             SenderCity = senderCity;
             SenderPhoneNumber = senderPhoneNumber;
             SenderEmail = senderEmail;
-            RecipientCompanyName = recipientCompanyName;
             RecipientName = recipientName;
             RecipientStreet = recipientStreet;
             RecipientZipCode = recipientZipCode;
@@ -34,6 +33,21 @@ namespace Post.Core.Domain
             RecipientEmail = recipientEmail;
             Description = description;
             CreatedAt = DateTime.Now;
+            UpdatedAt = DateTime.Now;
+        }
+
+        public void SetCompanyName(string senderCompanyName, string recipientCompanyName)
+        {
+            if(string.IsNullOrWhiteSpace(senderCompanyName))
+            {
+                throw new Exception($"Shipments with id: '{Id}' can not have an empty sender company name.");
+            }
+            if(string.IsNullOrWhiteSpace(recipientCompanyName))
+            {
+                throw new Exception($"Shipments with id: '{Id}' can not have an empty recipient company name.");
+            }
+            SenderCompanyName = senderCompanyName;
+            RecipientCompanyName = recipientCompanyName;
             UpdatedAt = DateTime.Now;
         }
         public void AddParcels(int amount, int weight, int height, int width, int length)

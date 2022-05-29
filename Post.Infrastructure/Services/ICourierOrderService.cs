@@ -12,9 +12,11 @@ namespace Post.Infrastructure.Services
         Task<CourierOrderDto> GetAsync(string companyName);
         Task<IEnumerable<CourierOrderDto>> BrowseAsync(string companyName = null);
         Task CreateAsync(Guid id, int courierOrderNumber, string senderCompanyName, string senderName, string senderStreet,
-            int senderZipCode, string senderCity, string senderPhoneNumber, string senderEmail, string description, int numberOfPackages);
+            int senderZipCode, string senderCity, string senderPhoneNumber, string senderEmail, string description, int numberOfPackages,
+            int weight, int height, int width, int length);
         Task UpdateAsync(Guid id, int courierOrderNumber, string senderCompanyName, string senderName, string senderStreet,
-            int senderZipCode, string senderCity, string senderPhoneNumber, string senderEmail, string description, int numberOfPackages);
+            int senderZipCode, string senderCity, string senderPhoneNumber, string senderEmail, string description, int numberOfPackages,
+            int weight, int height, int width, int length);
         Task DeleteAsync(Guid id);
     }
 }

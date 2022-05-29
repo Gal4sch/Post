@@ -5,6 +5,7 @@ using AutoMapper;
 using Post.Core.Domain;
 using Post.Core.Repositories;
 using Post.Infrastructure.DTO;
+using Post.Infrastructure.Extensions;
 
 namespace Post.Infrastructure.Services
 {
@@ -48,27 +49,32 @@ namespace Post.Infrastructure.Services
         }
 
         public async Task CreateAsync(Guid id, int courierOrderNumber, string senderCompanyName, string senderName, string senderStreet,
-            int senderZipCode, string senderCity, string senderPhoneNumber, string senderEmail, string description, int numberOfPackages)
+            int senderZipCode, string senderCity, string senderPhoneNumber, string senderEmail, string description, int numberOfPackages,
+            int weight, int height, int width, int length)
         {
             var courierOrder = await _courierOrderRepository.GetAsync(courierOrderNumber);
-            if(courierOrder !=null)
+            if (courierOrder != null)
             {
                 throw new Exception($"Courier order with number: '{courierOrder}' already exists.");
             }
             courierOrder = new CourierOrder(id, courierOrderNumber, senderCompanyName, senderName, senderStreet, senderZipCode,
-                senderCity, senderPhoneNumber, senderEmail, description, numberOfPackages);
+                senderCity, senderPhoneNumber, senderEmail, description, numberOfPackages, weight, height, width, length);
             await _courierOrderRepository.AddAsync(courierOrder);
         }
 
         public async Task UpdateAsync(Guid id, int courierOrderNumber, string senderCompanyName, string senderName, string senderStreet,
-            int senderZipCode, string senderCity, string senderPhoneNumber, string senderEmail, string description, int numberOfPackages)
+            int senderZipCode, string senderCity, string senderPhoneNumber, string senderEmail, string description, int numberOfPackages,
+            int weight, int height, int width, int length)
         {
-            throw new NotImplementedException();
+            var courierOrder = await _courierOrderRepository.GetOrFailCourierOrderAsync(id);
+            courierOrder.SetCompanyName(senderCompanyName);
+            await _courierOrderRepository.UpdateAsync(courierOrder);
         }
 
         public async Task DeleteAsync(Guid id)
         {
-            throw new NotImplementedException();
+            var courierOrder = await _courierOrderRepository.GetOrFailCourierOrderAsync(id);
+            await _courierOrderRepository.DeleteAsync(courierOrder);
         }
     }
 }
