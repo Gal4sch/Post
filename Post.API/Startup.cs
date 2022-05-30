@@ -11,6 +11,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Post.Core.Repositories;
+using Post.Infrastructure.Mappers;
+using Post.Infrastructure.Repositories;
+using Post.Infrastructure.Services;
 
 namespace Post.API
 {
@@ -26,12 +30,17 @@ namespace Post.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Post.API", Version = "v1" });
             });
+            services.AddScoped<ICourierOrderRepository,CourierOrderRepository>();
+            services.AddScoped<IShipmentsRepository,ShipmentsRepository>();
+            services.AddScoped<IUserRepository,UserRepository>();
+            services.AddScoped<IShipmentsService,ShipmentsService>();
+            services.AddScoped<ICourierOrderService,CourierOrderService>();
+            services.AddSingleton(AutoMapperConfig.Initialize());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

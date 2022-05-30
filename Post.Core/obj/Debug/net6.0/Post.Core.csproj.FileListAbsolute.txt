@@ -1,0 +1,12 @@
+D:\Pliki\Projekty\Programming\Programs\Post\src\Post.Core\bin\Debug\net6.0\Post.Core.deps.json
+D:\Pliki\Projekty\Programming\Programs\Post\src\Post.Core\bin\Debug\net6.0\Post.Core.dll
+D:\Pliki\Projekty\Programming\Programs\Post\src\Post.Core\bin\Debug\net6.0\Post.Core.pdb
+D:\Pliki\Projekty\Programming\Programs\Post\src\Post.Core\obj\Debug\net6.0\Post.Core.csproj.AssemblyReference.cache
+D:\Pliki\Projekty\Programming\Programs\Post\src\Post.Core\obj\Debug\net6.0\Post.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Pliki\Projekty\Programming\Programs\Post\src\Post.Core\obj\Debug\net6.0\Post.Core.AssemblyInfoInputs.cache
+D:\Pliki\Projekty\Programming\Programs\Post\src\Post.Core\obj\Debug\net6.0\Post.Core.AssemblyInfo.cs
+D:\Pliki\Projekty\Programming\Programs\Post\src\Post.Core\obj\Debug\net6.0\Post.Core.csproj.CoreCompileInputs.cache
+D:\Pliki\Projekty\Programming\Programs\Post\src\Post.Core\obj\Debug\net6.0\Post.Core.dll
+D:\Pliki\Projekty\Programming\Programs\Post\src\Post.Core\obj\Debug\net6.0\refint\Post.Core.dll
+D:\Pliki\Projekty\Programming\Programs\Post\src\Post.Core\obj\Debug\net6.0\Post.Core.pdb
+D:\Pliki\Projekty\Programming\Programs\Post\src\Post.Core\obj\Debug\net6.0\ref\Post.Core.dll
