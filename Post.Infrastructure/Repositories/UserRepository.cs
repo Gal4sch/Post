@@ -13,9 +13,12 @@ namespace Post.Infrastructure.Repositories
 
         public async Task<User> GetAsync(Guid id)
             => await Task.FromResult(_users.SingleOrDefault(x => x.Id == id));
-    
+
         public async Task<User> GetAsync(int userNumber)
             => await Task.FromResult(_users.SingleOrDefault(x => x.UserNumber == userNumber));
+
+        public async Task<User> GetAsync(string userLogin)
+            => await Task.FromResult(_users.SingleOrDefault(x => x.UserLogin == userLogin));
 
         public async Task AddAsync(User user)
         {
@@ -27,7 +30,7 @@ namespace Post.Infrastructure.Repositories
         {
             await Task.CompletedTask;
         }
-        
+
         public async Task DeleteAsync(User user)
         {
             _users.Remove(user);

@@ -5,7 +5,9 @@ namespace Post.Infrastructure.Services
 {
     public interface IUserService
     {
-        Task RegisterAsync(Guid userId, int userNumber, string userLogin, string password, 
+        Task RegisterAsync(Guid userId, int userNumber, string userLogin, string password,
             string phoneNumber, string email, string role = "user");
+
+        Task LoginAsync(int userNumber, string userLogin, string password);
     }
 }
