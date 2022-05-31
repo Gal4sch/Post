@@ -41,7 +41,7 @@ namespace Post.API.Controllers
             return Created("/account",null);
         }
         [HttpPost("login")]
-        public async Task<IActionResult> Login()
+        public async Task<IActionResult> Post(Login command)
         {
             throw new NotImplementedException();
         }

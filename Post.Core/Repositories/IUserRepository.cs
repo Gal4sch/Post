@@ -8,6 +8,7 @@ namespace Post.Core.Repositories
     {
         Task<User> GetAsync(Guid id);
         Task<User> GetAsync(int userNumber);
+        Task<User> GetAsync (string userLogin);
         Task AddAsync(User user);
         Task UpdateAsync(User user);
         Task DeleteAsync(User user);
