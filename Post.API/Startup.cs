@@ -40,6 +40,7 @@ namespace Post.API
             services.AddScoped<IUserRepository,UserRepository>();
             services.AddScoped<IShipmentsService,ShipmentsService>();
             services.AddScoped<ICourierOrderService,CourierOrderService>();
+            services.AddScoped<IUserService,UserService>();
             services.AddSingleton(AutoMapperConfig.Initialize());
         }
 
