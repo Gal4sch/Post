@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -10,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Post.Core.Repositories;
 using Post.Infrastructure.Mappers;
@@ -30,6 +33,27 @@ namespace Post.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes
+                (Configuration.GetSection("TokenProviderOptions:SecretKey").Value));
+            
+            var tokenValidationParameters = new TokenValidationParameters
+            {
+                IssuerSigningKey = signingKey,
+                ValidIssuer = Configuration.GetSection("TokenProviderOptions:Issuer").Value,
+                ValidateAudience = false
+            };
+
+            services.AddAuthentication(options =>
+            {
+                options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(options =>
+            {
+                options.Audience = Configuration.GetSection("TokenProviderOptions:Audience").Value;
+                options.ClaimsIssuer = Configuration.GetSection("TokenProviderOptions:Issuer").Value;
+                options.TokenValidationParameters = tokenValidationParameters;
+                options.SaveToken = true;
+            });
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -53,7 +77,6 @@ namespace Post.API
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Post.API v1"));
             }
-
             app.UseHttpsRedirection();
 
             app.UseRouting();

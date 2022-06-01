@@ -30,3 +30,10 @@ D:\Pliki\Projekty\Programming\Programs\Post\src\Post.API\obj\Debug\net6.0\refint
 D:\Pliki\Projekty\Programming\Programs\Post\src\Post.API\obj\Debug\net6.0\Post.API.pdb
 D:\Pliki\Projekty\Programming\Programs\Post\src\Post.API\obj\Debug\net6.0\Post.API.genruntimeconfig.cache
 D:\Pliki\Projekty\Programming\Programs\Post\src\Post.API\obj\Debug\net6.0\ref\Post.API.dll
+D:\Pliki\Projekty\Programming\Programs\Post\src\Post.API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Pliki\Projekty\Programming\Programs\Post\src\Post.API\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Pliki\Projekty\Programming\Programs\Post\src\Post.API\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\Pliki\Projekty\Programming\Programs\Post\src\Post.API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\Pliki\Projekty\Programming\Programs\Post\src\Post.API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Pliki\Projekty\Programming\Programs\Post\src\Post.API\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\Pliki\Projekty\Programming\Programs\Post\src\Post.API\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
