@@ -1,12 +1,14 @@
 using System;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Post.Infrastructure.Commands.Users;
 using Post.Infrastructure.Services;
 
 namespace Post.API.Controllers
 {
-    public class AccountController : Controller
+    public class AccountController : ApiControllerBase
     {
         private IUserService _userService;
 
@@ -16,10 +18,9 @@ namespace Post.API.Controllers
         }
 
         [HttpGet]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public async Task<IActionResult> Get()
-        {
-            throw new NotImplementedException();
-        }
+            => Json(await _userService.GetAccountAsync(UserId));
 
         [HttpPost("shipments")]
         public async Task<IActionResult> CreateShipments()
@@ -33,17 +34,15 @@ namespace Post.API.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<IActionResult> Post(Register command)
+        public async Task<IActionResult> Post([FromBody]Register command)
         {
             await _userService.RegisterAsync(Guid.NewGuid(), command.UserNumber, command.UserLogin,
-                command.Password, command.PhoneNumber, command.Email, command.Role);
+                command.Password, command.PhoneNumber, command.Email, command.Name, command.Role);
 
             return Created("/account",null);
         }
         [HttpPost("login")]
-        public async Task<IActionResult> Post(Login command)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<IActionResult> Post([FromBody]Login command)
+            => Json(await _userService.LoginAsync(command.UserNumber, command.UserLogin, command.Password));
     }
 }

@@ -5,6 +5,7 @@ using System.Text;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Post.Infrastructure.DTO;
+using Post.Infrastructure.Extensions;
 using Post.Infrastructure.Settings;
 
 namespace Post.Infrastructure.Services
@@ -25,7 +26,7 @@ namespace Post.Infrastructure.Services
                 new Claim(JwtRegisteredClaimNames.UniqueName, userId.ToString()),
                 new Claim(ClaimTypes.Role, role),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                new Claim(JwtRegisteredClaimNames.Iat, now.Ticks.ToString()),
+                new Claim(JwtRegisteredClaimNames.Iat, now.ToTimeStamp().ToString()),
             };
 
             var expires = now.AddMinutes(_jwtSettings.ExpiryMinutes);
@@ -44,7 +45,7 @@ namespace Post.Infrastructure.Services
             return new JwtDto 
             {
                 Token = token,
-                Expires = expires.Ticks
+                Expires = expires.ToTimeStamp()
             };
         }
     }

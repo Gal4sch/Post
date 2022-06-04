@@ -15,6 +15,7 @@ namespace Post.Infrastructure.Mappers
                 cfg.CreateMap<CourierOrder, CourierOrderDto>();
                 cfg.CreateMap<Shipments,ShipmentsDetailsDto>();
                 cfg.CreateMap<Parcel,ParcelDto>();
+                cfg.CreateMap<User,AccountDto>();
             })
             .CreateMapper();
     }

@@ -79,6 +79,10 @@ namespace Post.Infrastructure.Services
         {
             var shipments = await _shipmentsRepository.GetOrFailShipmentsAsync(id);      
             shipments.SetCompanyName(senderCompanyName, recipientCompanyName);
+            shipments.SetName(senderName, recipientName);
+            shipments.SetStreet(senderStreet,recipientStreet);
+            shipments.SetZipCode(senderZipCode, recipientZipCode);
+            
             await _shipmentsRepository.UpdateAsync(shipments);
         }
 

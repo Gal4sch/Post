@@ -28,5 +28,16 @@ namespace Post.Infrastructure.Extensions
 
             return courierOrder;
         }
+
+        public static async Task<User> GetOrFailUserAsync(this IUserRepository userRepository, Guid id)
+        {
+            var user = await userRepository.GetAsync(id);
+            if (user == null)
+            {
+                throw new Exception($"User with id: '{id}' does not exists.");
+            }
+
+            return user;
+        }
     }
 }
