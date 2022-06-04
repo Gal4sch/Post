@@ -18,7 +18,8 @@ namespace Post.Infrastructure.Repositories
             => await Task.FromResult(_users.SingleOrDefault(x => x.UserNumber == userNumber));
 
         public async Task<User> GetAsync(string userLogin)
-            => await Task.FromResult(_users.SingleOrDefault(x => x.UserLogin == userLogin));
+            => await Task.FromResult(_users.SingleOrDefault(x => 
+            x.UserLogin.ToLowerInvariant() == userLogin.ToLowerInvariant()));
 
         public async Task AddAsync(User user)
         {

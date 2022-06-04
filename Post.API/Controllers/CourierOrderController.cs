@@ -7,7 +7,7 @@ using Post.Infrastructure.Services;
 namespace Post.API.Controllers
 {
     [Route("[controller]")]
-    public class CourierOrderController : Controller
+    public class CourierOrderController : ApiControllerBase
     {
         private readonly ICourierOrderService _courierOrderService;
 

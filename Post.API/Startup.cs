@@ -41,8 +41,14 @@ namespace Post.API
             var tokenValidationParameters = new TokenValidationParameters
             {
                 ValidIssuer = Configuration.GetSection("jwt:Issuer").Value,
+                ValidateIssuer = true,
                 ValidateAudience = false,
-                IssuerSigningKey = signingKey
+                ValidateLifetime = true,
+                RequireExpirationTime = true,
+                RequireSignedTokens = true,
+                IssuerSigningKey = signingKey,
+                ValidateIssuerSigningKey = true,
+                ClockSkew = TimeSpan.Zero
             };
 
             services.AddAuthentication(options =>
@@ -67,6 +73,7 @@ namespace Post.API
             services.AddScoped<ICourierOrderService, CourierOrderService>();
             services.AddScoped<IUserService, UserService>();
             services.AddSingleton(AutoMapperConfig.Initialize());
+            services.AddSingleton<IJwtHandler, JwtHandler>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

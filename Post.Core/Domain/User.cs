@@ -10,21 +10,23 @@ namespace Post.Core.Domain
         public string Password { get; protected set; }
         public string PhoneNumber { get; protected set; }
         public string Email { get; protected set; }
+        public string Name { get; protected set; }
         public DateTime CreatedAt { get; protected set; }
 
         protected User()
         {
         }
-        public User(Guid userId, int userNumber, string role, string userLogin, string email,
-            string password, string phoneNumber)
+        public User(Guid id, int userNumber, string role, string userLogin, string email,
+            string password, string phoneNumber, string name)
         {
-            Id = userId;
+            Id = id;
             UserNumber = userNumber;
             Role = role;
             UserLogin = userLogin;
             Email = email;
             Password = password; 
             PhoneNumber = phoneNumber;
+            Name = name; 
             CreatedAt = DateTime.Now;
         }
     }
