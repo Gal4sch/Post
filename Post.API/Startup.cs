@@ -18,6 +18,7 @@ using Post.Core.Repositories;
 using Post.Infrastructure.Mappers;
 using Post.Infrastructure.Repositories;
 using Post.Infrastructure.Services;
+using Post.Infrastructure.Settings;
 
 namespace Post.API
 {
@@ -33,14 +34,15 @@ namespace Post.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<JwtSettings>(Configuration.GetSection("jwt"));
             var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes
-                (Configuration.GetSection("TokenProviderOptions:SecretKey").Value));
-            
+                (Configuration.GetSection("jwt:SecretKey").Value));
+
             var tokenValidationParameters = new TokenValidationParameters
             {
-                IssuerSigningKey = signingKey,
-                ValidIssuer = Configuration.GetSection("TokenProviderOptions:Issuer").Value,
-                ValidateAudience = false
+                ValidIssuer = Configuration.GetSection("jwt:Issuer").Value,
+                ValidateAudience = false,
+                IssuerSigningKey = signingKey
             };
 
             services.AddAuthentication(options =>
@@ -48,8 +50,7 @@ namespace Post.API
                 options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
             }).AddJwtBearer(options =>
             {
-                options.Audience = Configuration.GetSection("TokenProviderOptions:Audience").Value;
-                options.ClaimsIssuer = Configuration.GetSection("TokenProviderOptions:Issuer").Value;
+                options.ClaimsIssuer = Configuration.GetSection("jwt:Issuer").Value;
                 options.TokenValidationParameters = tokenValidationParameters;
                 options.SaveToken = true;
             });
@@ -59,12 +60,12 @@ namespace Post.API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Post.API", Version = "v1" });
             });
-            services.AddScoped<ICourierOrderRepository,CourierOrderRepository>();
-            services.AddScoped<IShipmentsRepository,ShipmentsRepository>();
-            services.AddScoped<IUserRepository,UserRepository>();
-            services.AddScoped<IShipmentsService,ShipmentsService>();
-            services.AddScoped<ICourierOrderService,CourierOrderService>();
-            services.AddScoped<IUserService,UserService>();
+            services.AddScoped<ICourierOrderRepository, CourierOrderRepository>();
+            services.AddScoped<IShipmentsRepository, ShipmentsRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IShipmentsService, ShipmentsService>();
+            services.AddScoped<ICourierOrderService, CourierOrderService>();
+            services.AddScoped<IUserService, UserService>();
             services.AddSingleton(AutoMapperConfig.Initialize());
         }
 
