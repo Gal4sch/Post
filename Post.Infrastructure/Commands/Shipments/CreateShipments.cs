@@ -21,7 +21,7 @@ namespace Post.Infrastructure.Commands
         public string RecipientPhoneNumber { get; set; }
         public string RecipientEmail { get; set; }
         public string Description { get; set; }
-        public int NumberOfPackages { get; set; }
+        public int NumberOfParcels { get; set; }
         public int Weight { get; set; }
         public int Height { get; set; }
         public int Width { get; set; }

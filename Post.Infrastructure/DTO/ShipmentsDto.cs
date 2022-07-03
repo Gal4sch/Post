@@ -21,6 +21,6 @@ namespace Post.Infrastructure.DTO
         public string RecipientPhoneNumber { get; set; }
         public string RecipientEmail { get; set; }
         public string Description { get; set; }
-        public int ParcelsCount { get; set; }
+        public int NumberOfParcels { get; set; }
     }
 }
