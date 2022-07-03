@@ -45,8 +45,8 @@ namespace Post.API.Controllers
             await _shipmentsService.CreateAsync(command.ShipmentsId, command.ShipmentsNumber, command.SenderCompanyName, command.SenderName,
                 command.SenderStreet, command.SenderZipCode, command.SenderCity, command.SenderPhoneNumber, command.SenderEmail,
                 command.RecipientCompanyName, command.RecipientName, command.RecipientStreet, command.RecipientZipCode, command.RecipientCity,
-                command.RecipientPhoneNumber, command.RecipientEmail, command.Description);
-            await _shipmentsService.AddParcelsAsync(command.ShipmentsId, command.NumberOfPackages, command.Weight, command.Height, command.Width, command.Length);
+                command.RecipientPhoneNumber, command.RecipientEmail, command.Description, command.NumberOfParcels);
+            await _shipmentsService.AddParcelsAsync(command.ShipmentsId, command.NumberOfParcels , command.ShipmentsNumber, command.Weight, command.Height, command.Width, command.Length);
 
             return Created($"/shipments/{command.ShipmentsId}", null);
         }
@@ -57,7 +57,7 @@ namespace Post.API.Controllers
             await _shipmentsService.UpdateAsync(shipmentsId, command.SenderCompanyName, command.SenderName,
                 command.SenderStreet, command.SenderZipCode, command.SenderCity, command.SenderPhoneNumber, command.SenderEmail,
                 command.RecipientCompanyName, command.RecipientName, command.RecipientStreet, command.RecipientZipCode, command.RecipientCity,
-                command.RecipientPhoneNumber, command.RecipientEmail, command.Description);
+                command.RecipientPhoneNumber, command.RecipientEmail, command.Description, command.NumberOfParcels);
 
             return NoContent();
         }

@@ -5,7 +5,8 @@ namespace Post.Infrastructure.DTO
     public class ParcelDto
     {
         public Guid ShipmentsId { get; set; }
-        public int NumberOfPackages { get; set; }
+        public int ShipmentsNumber { get; set; }
+        public int NumberOfParcels { get; set; }
         public int Weight { get; set; }
         public int Height { get; set; }
         public int Width { get; set; }

@@ -11,10 +11,10 @@ namespace Post.Infrastructure.Mappers
             => new MapperConfiguration(cfg =>
             {
                 cfg.CreateMap<Shipments, ShipmentsDto>()
-                    .ForMember(x => x.ParcelsCount, m => m.MapFrom(p => p.Parcel.Count()));
+                    .ForMember(x => x.NumberOfParcels, m => m.MapFrom(p => p.Parcel.Count()));
                 cfg.CreateMap<CourierOrder, CourierOrderDto>();
                 cfg.CreateMap<Shipments,ShipmentsDetailsDto>();
-                cfg.CreateMap<Parcel,ParcelDto>();
+                cfg.CreateMap<ShipmentsNumber,ParcelDto>();
                 cfg.CreateMap<User,AccountDto>();
             })
             .CreateMapper();

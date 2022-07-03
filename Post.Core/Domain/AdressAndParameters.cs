@@ -19,6 +19,7 @@ namespace Post.Core.Domain
         public string RecipientPhoneNumber { get; protected set; }
         public string RecipientEmail { get; protected set; }
         public string Description { get; protected set; }
+        public int NumberOfParcels { get; protected set; }
         public int Weight { get; protected set; }
         public int Height { get; protected set; }
         public int Width { get; protected set; }

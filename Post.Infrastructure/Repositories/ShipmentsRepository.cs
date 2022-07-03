@@ -11,8 +11,7 @@ namespace Post.Infrastructure.Repositories
     {
         private static readonly ISet<Shipments> _shipments = new HashSet<Shipments>
         {
-            new Shipments(Guid.NewGuid(), 1024 , "company 1", "name", "street", 11111, "city 1", "777", "test1@test.com", "company 2", 
-                "name 2", "street 2", 11111, "City 2", "555",  "test2@test.com", "description")
+        
         };
 
         public async Task<Shipments> GetAsync(Guid id)
